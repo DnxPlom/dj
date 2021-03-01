@@ -1,0 +1,145 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(rgb(44, 41, 42), rgb(238, 210, 85));
+}
+
+h2 {
+    font-family: "Times New Roman", Times, serif;
+    letter-spacing: 1px;
+    word-spacing: 6px;
+    font-weight: 700;
+    text-decoration: overline rgb(68, 68, 68);
+    font-style: italic;
+    font-variant: small-caps;
+    color: goldenrod;
+    font-size: 23px;
+    letter-spacing: 4px;
+}
+
+.clock {
+    margin-top: 10px;
+    height: 350px;
+    width: 350px;
+    background: url(./bg.jpg);
+    background-size: cover;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 5px solid rgb(88, 66, 8);
+    box-shadow: 0 0 10px 10px black;
+}
+
+.hands {
+    width: 30px;
+    height: 30px;
+    background: rgb(0, 230, 19);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hands::before {
+    content: '';
+    position: absolute;
+    z-index: 2;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background: crimson;
+}
+
+.hour, .min, .sec {
+    position: absolute;
+}
+
+.hour {
+    background: none;
+    height: 70px;
+    width: 10px;
+}
+
+.hour::before {
+    content: '';
+    height: 100px;
+    width: 100%;
+    background: none;
+    position: absolute;
+    bottom: 10px;
+}
+
+.hour::after {
+    content: '';
+    position: absolute;
+    height: 10px;
+    width: 10px;
+    top: -43px;
+    right: -2.5px;
+    transform: rotate(45deg);
+    border-top: 4px solid brown;
+    border-left: 4px solid brown;
+}
+
+.min {
+    height: 150px;
+    width: 8px;
+    background: none;
+}
+
+.min::before {
+    content: '';
+    position: absolute;
+    background: brown;
+    bottom: 50px;
+    height: 150px;
+    width: 100%;
+}
+
+.sec {
+    height: 200px;
+    width: 5px;
+    background: none;
+    transition: .95s steps(30);
+}
+
+.sec::before {
+    content: '';
+    position: absolute;
+    background: crimson;
+    bottom: 60px;
+    height: 200px;
+    width: 100%;
+}
+
+.date {
+
+    font-family: "Times New Roman", Times, serif;
+    font-size: 19px;
+    letter-spacing: 1px;
+    word-spacing: 6px;
+    color: #000000;
+    font-weight: 700;
+    font-style: italic;
+    font-variant: small-caps;
+    text-transform: capitalize;
+}
+
+.bouncing {
+    display: flex;
+    justify-content: center;
+    align-items:flex-end;
+    height: 140px;
+    width: 100%;
+}
+
+.ball {
+    height: 45px;
+    width: 45px;
+    background: linear-gradient(black, white);
+    border-radius: 50%;
+    transition: .4s ease;
+}
